@@ -12,7 +12,6 @@ def mine(block_number, transactions, previous_hash, prefix_zeros):
         if new_hash.startswith(prefix_str):
             print(f"Yay! Successfully mined bitcoins with nonce value:{nonce}")
             return new_hash
-
     raise BaseException(f"Couldn't find correct has after trying {MAX_NONCE} times")
 
 if __name__=='__main__':
