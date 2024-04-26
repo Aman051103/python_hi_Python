@@ -1,7 +1,6 @@
 
 '''------------------Rock Paper Scissor Game-------------------'''
 
-
 import random
 user_score=comp_score=tie=0
 l=["r","p","s"]
