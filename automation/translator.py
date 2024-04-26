@@ -4,8 +4,8 @@ translator = Translator()
 out = translator.translate("क्या हाल है", dest='en')
 print(out)
 
-mystory = '''Tell me who doesn't love baby yoda from mandolarian? 
-Baby yoda has shaken me like soda.
+mystory = '''well, the world that wew live in today.
+is fucked up.
 '''
 out = translator.translate(mystory, dest='hi')
 print(out.text)
