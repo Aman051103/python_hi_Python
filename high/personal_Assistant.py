@@ -12,12 +12,10 @@ voices = engine.getProperty('voices')
 # print(voices[1].id)
 engine.setProperty('voice', voices[0].id)
 
-
 def speak(audio):
     engine.setProperty("language",'hi')
     engine.say(audio)
     engine.runAndWait()
-
 
 def wishMe():
     hour = int(datetime.datetime.now().hour)
@@ -35,8 +33,6 @@ def wishMe():
     speak("Please tell me how may I help you")
 
 def takeCommand():
-    
-
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening...")
@@ -45,12 +41,10 @@ def takeCommand():
         print("Recognizing...")    
         query = r.recognize_google(audio, language='en-in')
         print(f"User said: {query}\n")
-
     try:
         print("Recognizing...")    
         query = r.recognize_google(audio, language='en-in')
         print(f"User said: {query}\n")
-
     except Exception as e:
         # print(e)    
         print("Say that again please...")  
@@ -70,7 +64,6 @@ if __name__ == "__main__":
     while True:
     # if 1:
         query = takeCommand().lower()
-
         # Logic for executing tasks based on query
         if 'wikipedia' in query:
             speak('Searching Wikipedia...')
@@ -79,32 +72,25 @@ if __name__ == "__main__":
             speak("According to Wikipedia")
             print(results)
             speak(results)
-
         elif 'open youtube' in query:
             webbrowser.open("youtube.com")
-
         elif 'open google' in query:
             webbrowser.open("google.com")
-
         elif 'open stackoverflow' in query:
             webbrowser.open("stackoverflow.com")
         elif 'I am fine how are you Jarvis' in query:
             speak(f"I am good Sir")
-      
         elif 'play music' in query:
             music_dir = 'F:\\Sada Bahar'
             songs = os.listdir(music_dir)
             print(songs)    
             os.startfile(os.path.join(music_dir, songs[0]))
-
         elif 'the time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")    
             speak(f"Sir, the time is {strTime}")
-
         elif 'open code' in query:
             codePath = "E:\DC\Jarvis.py"
             os.startfile(codePath)
-
         elif 'Send email' in query:
             try:
                 speak("What should I say?")
